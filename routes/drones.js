@@ -16,12 +16,19 @@ router.get('/drones', (req, res, next) => {
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  res.render('./drones/create-form')
 });
 
-router.post('/drones/create', (req, res, next) => {
+router.post('/drones/create', async (req, res, next) => {
   // Iteration #3: Add a new drone
-  // ... your code here
+  try{
+    const newDrone = await Drone.create(req.body)
+    console.log('new drone created:', newDrone)
+    res.redirect('/drones')
+  }catch (err){
+    console.log('something went wrong: ', err)
+    res.render('./drones/create-form')
+  }
 });
 
 router.get('/drones/:id/edit', (req, res, next) => {
