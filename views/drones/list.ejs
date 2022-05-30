@@ -1,10 +1,11 @@
 <h2>Available drones</h2>
 <ul>
-    <% drones.forEach(({name, propellers, maxSpeed}) => { %>
+    <% drones.forEach(({name, propellers, maxSpeed,id}) => { %>
         <li>
             <p><strong>Name: </strong><%= name %></p>
             <p><strong>Propellers: </strong><%= propellers %></p>
             <p><strong>Max Speed: </strong><%= maxSpeed %></p>
+            <button><a href="/drones/<%= id %>/edit ">Edit</a></button>
         </li>
     <% }) %>
 </ul>
