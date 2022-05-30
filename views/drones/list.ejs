@@ -5,7 +5,12 @@
             <p><strong>Name: </strong><%= name %></p>
             <p><strong>Propellers: </strong><%= propellers %></p>
             <p><strong>Max Speed: </strong><%= maxSpeed %></p>
-            <button><a href="/drones/<%= id %>/edit ">Edit</a></button>
+            <div>
+                <button><a href="/drones/<%= id %>/edit">Edit</a></button>
+                <form action="/drones/<%= id %>/delete" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
         </li>
     <% }) %>
 </ul>

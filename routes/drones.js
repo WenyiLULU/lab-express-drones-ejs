@@ -44,9 +44,8 @@ router.get('/drones/:id/edit', (req, res, next) => {
 router.post('/drones/:id/edit', async (req, res, next) => {
   // Iteration #4: Update the drone
   try{
-    
     const updateDrone = await Drone.findByIdAndUpdate(req.params.id, req.body)
-    console.log('Dron edited:', updateDrone)
+    //console.log('Dron edited:', updateDrone)
     res.redirect('/drones')
   }catch (err){
     console.log('something went wrong: ', err)
@@ -54,9 +53,10 @@ router.post('/drones/:id/edit', async (req, res, next) => {
   }
 });
 
-router.post('/drones/:id/delete', (req, res, next) => {
+router.post('/drones/:id/delete', async (req, res, next) => {
   // Iteration #5: Delete the drone
-  // ... your code here
+  await Drone.findByIdAndDelete(req.params.id)
+  res.redirect('/drones')
 });
 
 module.exports = router;
