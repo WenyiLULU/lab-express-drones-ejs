@@ -10,14 +10,14 @@ router.get('/drones', (req, res, next) => {
   Drone.find()
     .then((drones)=>{
       //console.log('Get drones information:', drones)
-      res.render('./drones/list', {drones})
+      res.render('drones/list', {drones})
     })
     .catch(error => {console.log(error)})
 });
 
 router.get('/drones/create', (req, res, next) => {
   // Iteration #3: Add a new drone
-  res.render('./drones/create-form')
+  res.render('drones/create-form')
 });
 
 router.post('/drones/create', async (req, res, next) => {
@@ -28,7 +28,7 @@ router.post('/drones/create', async (req, res, next) => {
     res.redirect('/drones')
   }catch (err){
     console.log('something went wrong: ', err)
-    res.render('./drones/create-form')
+    res.render('drones/create-form')
   }
 });
 
@@ -37,7 +37,7 @@ router.get('/drones/:id/edit', (req, res, next) => {
   Drone.findById(req.params.id)
     .then((drone)=>{
       //console.log('Drone to edit is:', drone)
-      res.render('./drones/update-form', {drone})
+      res.render('drones/update-form', {drone})
     })
 });
 
@@ -49,7 +49,7 @@ router.post('/drones/:id/edit', async (req, res, next) => {
     res.redirect('/drones')
   }catch (err){
     console.log('something went wrong: ', err)
-    res.render('./drones/update-form')
+    res.render('drones/update-form')
   }
 });
 

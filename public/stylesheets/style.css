@@ -1,8 +1,111 @@
 body {
-  padding: 50px;
+  padding: 0;
+  margin: 0;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
-
 a {
+  text-decoration: none;
   color: #00b7ff;
+}
+
+nav{
+  position: fixed;
+  top: 0;
+  background-color: navy;
+  border-radius: 0 0 50% 50%;
+  height: 60px;
+  width: 100vw;
+}
+nav ul{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+nav ul li{
+  margin-right: 25px;
+}
+nav a{
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.home {
+  padding-top: 100px;
+  background-image: url(/images/drone.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  text-shadow: 3px 3px navy;
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.big-button{
+  margin: 15px auto;
+  background-color: rgba(0, 0, 128, 0.5);
+  color: white;
+  width: 300px;
+  height: 50px;
+  border-radius: 25px;
+}
+.big-button a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.drones{
+  padding-top: 80px;
+  background-color: rgb(138, 201, 238);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h2{
+  margin: 20px auto;
+  color: white;
+  font-size: 2rem;
+  text-shadow: 2px 2px gray;
+}
+.list{
+  list-style-type: none;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+}
+.single-drone{
+  padding: 10px;
+  width: 200px;
+  font-size: 1rem;
+  border: 1px solid navy;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.295);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.single-drone div{
+  display: flex;
+  justify-content: space-evenly;
+}
+.single-drone button{
+  width: 60px;
+  margin: 5px;
+  color: tomato;
+}
+.single-drone a{
+  color: navy;
 }
